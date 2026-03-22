@@ -1,0 +1,36 @@
+
+---
+import whatsapp from "../../public/WhatsappLogo.svg"
+---
+
+<style>
+    p {
+        color: white;
+    }
+    ul li {
+        color: white;
+    }
+</style>
+
+<div class="max-w-6xl mx-auto py-24 flex flex-col justify-center px-4">
+    <div class="flex flex-col justify-center items-center gap-2.5 text-center">
+    <p class="text-xl md:text-2xl uppercase font-bold">Essa análise é indicada para quem:</p>
+        <ul>
+            <li>Está com parcelas do financiamento em atraso.</li>
+            <li>Recebeu notificação do banco.</li>
+            <li>Está em Risco de busca e apreensão.</li>
+            <li>Possuí uma dívida de financimento aumentando rapidamente.</li>
+        </ul>
+    <p class="text-lg">Se seu veículo já foi apreendido ou está em risco, é importante avaliar sua situação o quanto antes.</p>
+        <div class="mt-6">
+            <a
+                class="inline-flex w-full max-w-xs md:w-auto justify-center bg-[#B9B4AB] text-black px-4 py-3 md:px-3 md:py-2 rounded-sm items-center gap-2 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B9B4AB]"
+                href="https://wa.me/5592984093014?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20caso"
+                aria-label="Abrir WhatsApp"
+            >
+                <img src={whatsapp.src} alt="WhatsApp" class="w-5 h-5" />
+                <span>Avaliar meu caso (WhatsApp)</span>
+            </a>
+        </div>
+    </div>
+</div>
