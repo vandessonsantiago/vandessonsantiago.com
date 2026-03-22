@@ -7,38 +7,37 @@ import whatsapp from "../../public/WhatsappLogo.svg"
 
 <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={`background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${imgHero.src})`}>
   <div class="max-w-2xl mx-auto flex flex-col items-center justify-center gap-8 px-4 text-center">
-    <!-- Question -->
-    <div class="flex flex-col gap-4">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Qual é sua situação?</h1>
-      <p class="text-base md:text-lg text-gray-300">Vamos adaptar a avaliação ao seu caso.</p>
+    <div id="heroChoice" class="flex flex-col items-center justify-center gap-8 w-full">
+      <div class="flex flex-col gap-4">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Qual é sua situação?</h1>
+        <p class="text-base md:text-lg text-gray-300">Vamos adaptar a avaliação ao seu caso.</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+        <button 
+          type="button"
+          onclick="showHero('pre')"
+          class="flex-1 px-6 py-4 bg-[#B9B4AB] text-black font-bold text-lg rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B9B4AB]"
+        >
+          <svg class="w-5 h-5 inline mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2v2m0-4h-2V7h2v6z" fill="currentColor"/>
+          </svg>
+          Está em risco / Notificação recebida
+        </button>
+
+        <button 
+          type="button"
+          onclick="showHero('post')"
+          class="flex-1 px-6 py-4 bg-white text-black font-bold text-lg rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+        >
+          <svg class="w-5 h-5 inline mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.41-1.41L7 14h3V5h3v9h3l-3.04-3.71z" fill="currentColor"/>
+          </svg>
+          Já foi apreendido
+        </button>
+      </div>
     </div>
 
-    <!-- Choice Buttons -->
-    <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-      <!-- Pre-repossession button -->
-      <button 
-        onclick="showHero('pre')"
-        class="flex-1 px-6 py-4 bg-[#B9B4AB] text-black font-bold text-lg rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B9B4AB]"
-      >
-        <svg class="w-5 h-5 inline mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2v2m0-4h-2V7h2v6z" fill="currentColor"/>
-        </svg>
-        Está em risco / Notificação recebida
-      </button>
-
-      <!-- Post-repossession button -->
-      <button 
-        onclick="showHero('post')"
-        class="flex-1 px-6 py-4 bg-white text-black font-bold text-lg rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
-      >
-        <svg class="w-5 h-5 inline mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.41-1.41L7 14h3V5h3v9h3l-3.04-3.71z" fill="currentColor"/>
-        </svg>
-        Já foi apreendido
-      </button>
-    </div>
-
-    <!-- Hidden hero content that shows based on selection -->
     <div id="heroContent" class="w-full mt-8"></div>
   </div>
 </div>
@@ -60,11 +59,22 @@ import whatsapp from "../../public/WhatsappLogo.svg"
   }
 </style>
 
-<script>
-  function showHero(scenario: string) {
+<script is:inline>
+  function showHero(scenario) {
     const contentDiv = document.getElementById('heroContent');
+    const choiceDiv = document.getElementById('heroChoice');
+    const siteContent = document.getElementById('siteContent');
+
     if (!contentDiv) return;
-    
+
+    if (choiceDiv) {
+      choiceDiv.style.display = 'none';
+    }
+
+    if (siteContent) {
+      siteContent.style.display = 'block';
+    }
+
     if (scenario === 'pre') {
       contentDiv.innerHTML = `
         <div class="hero-content flex flex-col gap-4 text-center">
@@ -115,12 +125,17 @@ import whatsapp from "../../public/WhatsappLogo.svg"
       `;
     }
 
-    // Scroll to content
     setTimeout(() => {
-      const heroContent = document.getElementById('heroContent');
-      if (heroContent) {
-        heroContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      contentDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 100);
   }
+
+  window.showHero = showHero;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const siteContent = document.getElementById('siteContent');
+    if (siteContent) {
+      siteContent.style.display = 'none';
+    }
+  });
 </script>
