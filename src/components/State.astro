@@ -4,23 +4,15 @@ import whatsapp from "../../public/WhatsappLogo.svg"
 ---
 
 <style>
-    p {
+    .state-content p {
         color: white;
     }
-    ul li {
+    .state-content ul li {
         color: white;
-    }
-    
-    /* Hide items based on scenario */
-    [data-scenario="post"] [data-show-pre] {
-        display: none;
-    }
-    [data-scenario="pre"] [data-show-post] {
-        display: none;
     }
 </style>
 
-<div class="max-w-6xl mx-auto py-24 flex flex-col justify-center px-4" data-scenario-aware>
+<div class="max-w-6xl mx-auto py-24 flex flex-col justify-center px-4 state-content" data-scenario-aware>
     <div class="flex flex-col justify-center items-center gap-2.5 text-center">
     <p class="text-xl md:text-2xl uppercase font-bold">
         <span data-show-pre>Essa análise é indicada para quem (em risco):</span>

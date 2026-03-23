@@ -18,3 +18,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* Global scenario-aware styles */
+[data-scenario="post"] [data-show-pre] {
+    display: none !important;
+}
+
+[data-scenario="pre"] [data-show-post] {
+    display: none !important;
+}
