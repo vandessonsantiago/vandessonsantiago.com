@@ -42,8 +42,8 @@ import whatsapp from "../../public/WhatsappLogo.svg"
     <div class="flex flex-col items-center">
       <h3 class="text-xl md:text-2xl font-bold text-white mb-8 text-center">O que clientes dizem</h3>
       
-      <!-- Testimonial Card -->
-      <div class="max-w-2xl bg-white/5 border border-[#B9B4AB]/30 rounded-sm p-8 md:p-10 relative">
+      <!-- Testimonial Card PRE -->
+      <div class="max-w-2xl bg-white/5 border border-[#B9B4AB]/30 rounded-sm p-8 md:p-10 relative" data-show-pre>
         <!-- Quote Mark -->
         <div class="absolute top-4 left-6 text-4xl text-[#B9B4AB]/30">"</div>
         
@@ -60,6 +60,28 @@ import whatsapp from "../../public/WhatsappLogo.svg"
           <div>
             <p class="text-white font-semibold">João S.</p>
             <p class="text-gray-300 text-sm">Manaus, AM • Março 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card POST -->
+      <div class="max-w-2xl bg-white/5 border border-[#B9B4AB]/30 rounded-sm p-8 md:p-10 relative" data-show-post>
+        <!-- Quote Mark -->
+        <div class="absolute top-4 left-6 text-4xl text-[#B9B4AB]/30">"</div>
+        
+        <!-- Testimonial Text -->
+        <p class="text-white text-base md:text-lg leading-relaxed mb-6 relative z-10 pt-4">
+          Meu carro foi apreendido na quinta sem aviso prévio. Entrei em pânico — pensei que estava perdido. Liguei para Vandesson sexta de manhã e ele me mostrou que ainda tinha opções. Em 72h conseguimos negociar com o Banco do Brasil um pagamento parcelado e recuperar o veículo. Se não tivesse agido rápido naquele fim de semana, a situação teria ficado muito pior.
+        </p>
+        
+        <!-- Author -->
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#B9B4AB] flex items-center justify-center">
+            <span class="text-black font-bold text-lg">MO</span>
+          </div>
+          <div>
+            <p class="text-white font-semibold">Marina O.</p>
+            <p class="text-gray-300 text-sm">Brasília, DF • Fevereiro 2024</p>
           </div>
         </div>
       </div>

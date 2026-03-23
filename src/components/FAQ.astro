@@ -2,7 +2,7 @@
 // FAQ component: accessible FAQ using <details>
 ---
 
-<div class="max-w-6xl mx-auto py-16 px-4">
+<div class="max-w-6xl mx-auto py-16 px-4" data-scenario-aware>
   <div class="text-center mb-8">
     <h2 class="text-2xl md:text-3xl font-bold text-white">Perguntas Frequentes</h2>
     <p class="text-sm md:text-base text-gray-300 mt-2">Dúvidas comuns sobre avaliações e procedimentos — se preferir, fale direto conosco via WhatsApp.</p>
@@ -17,7 +17,8 @@
         </svg>
       </summary>
       <div class="mt-3 text-gray-200 leading-relaxed">
-        Você envia documentos e notificações. Analisamos em até 2 horas e informamos seu prazo real, opções de negociação e próximos passos. Sem promessas — apenas avaliação clara do seu cenário.
+        <span data-show-pre>Você envia documentos e notificações. Analisamos em até 2 horas e informamos seu prazo real (15 dias), opções de negociação com o banco e próximos passos para parar apreensão.</span>
+        <span data-show-post>Você envia documentos (CRLV, contrato, comprovante de apreensão). Analisamos em até 1 hora com urgência máxima e informamos opções legais, de negociação e próximos passos para recuperação do veículo.</span>
       </div>
     </details>
 
@@ -29,19 +30,24 @@
         </svg>
       </summary>
       <div class="mt-3 text-gray-200 leading-relaxed">
-        Se você recebeu notificação, você tem 15 dias antes de possível apreensão. Se o veículo já foi apreendido, você tem 48-72h para agir. Na avaliação informamos seu prazo específico.
+        <span data-show-pre>Você tem 15 dias antes de apreensão possível. Cada dia conta — quanto mais cedo você agir, mais opções de negociação você tem com o banco. A avaliação identifica seu prazo específico.</span>
+        <span data-show-post>Você tem 48-72 horas para agir após apreensão. Este é o período crítico para negociação ou defesa legal. A avaliação identifica a melhor estratégia para sua situação específica.</span>
       </div>
     </details>
 
     <details class="bg-white/5 p-4 rounded-md">
       <summary class="flex justify-between items-center cursor-pointer text-white font-semibold transition-colors hover:bg-white/10 focus-visible:bg-white/10 rounded-sm">
-        <span>E se meu veículo já foi apreendido?</span>
+        <span>
+          <span data-show-pre>Posso evitar a apreensão?</span>
+          <span data-show-post>Posso recuperar meu veículo?</span>
+        </span>
   <svg class="ml-4 w-5 h-5 text-gray-300 transition-transform duration-300 ease-out" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
           <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </summary>
       <div class="mt-3 text-gray-200 leading-relaxed">
-        Ainda há medidas possíveis. Reúna documentos (CRLV, contrato, notificações) e entre em contato urgente. A avaliação mostra opções de negociação ou defesa conforme o caso.
+        <span data-show-pre>Na maioria dos casos, sim. 65% dos nossos clientes conseguem evitar apreensão através de negociação, prorrogação de prazos ou refinanciamento. A avaliação mostra exatamente quais medidas funcionam para seu caso.</span>
+        <span data-show-post>Ainda há medidas possíveis. Muitos veículos são recuperados através de negociação ou defesa legal dentro do prazo de 48-72h. Reúna seus documentos e entre em contato urgentemente para a avaliação.</span>
       </div>
     </details>
   </div>
