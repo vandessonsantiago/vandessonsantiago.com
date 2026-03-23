@@ -41,6 +41,14 @@ const logoSrc = logo.src;
     </div>
 
     <div id="heroContent" class="w-full mt-8"></div>
+
+    <!-- Scroll indicator - hidden by default, shown after selection -->
+    <div id="scrollIndicator" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 hidden opacity-0 transition-opacity duration-500">
+      <p class="text-white text-sm font-semibold">Confira seu resultado</p>
+      <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
   </div>
 </div>
 
@@ -71,6 +79,7 @@ const logoSrc = logo.src;
     const contentDiv = document.getElementById('heroContent');
     const choiceDiv = document.getElementById('heroChoice');
     const siteContent = document.getElementById('siteContent');
+    const scrollIndicator = document.getElementById('scrollIndicator');
     
 
     if (!contentDiv) return;
@@ -81,6 +90,16 @@ const logoSrc = logo.src;
 
     if (siteContent) {
       siteContent.style.display = 'block';
+    }
+
+    // Show scroll indicator
+    if (scrollIndicator) {
+      scrollIndicator.classList.remove('hidden');
+      scrollIndicator.classList.add('opacity-100');
+      // Hide indicator after 6 seconds
+      setTimeout(() => {
+        scrollIndicator.classList.add('opacity-0', 'hidden');
+      }, 6000);
     }
 
     if (scenario === 'pre') {
