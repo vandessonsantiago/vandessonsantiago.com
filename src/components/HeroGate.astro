@@ -2,13 +2,15 @@
 // HeroGate component: allows visitor to choose their situation (pre or post repossession)
 // Then renders appropriate hero messaging
 import imgHero from "../../public/imgHero.png"
-import whatsapp from "../../public/WhatsappLogo.svg"
+import logo from "../../public/logo-vandessonsantiago.png"
+const logoSrc = logo.src;
 ---
 
 <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={`background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${imgHero.src})`}>
   <div class="max-w-2xl mx-auto flex flex-col items-center justify-center gap-8 px-4 text-center">
     <div id="heroChoice" class="flex flex-col items-center justify-center gap-8 w-full">
       <div class="flex flex-col gap-4">
+        <img src={logo.src} alt="Vandesson Santiago" class="mx-auto mb-8 w-36 md:w-64" />
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Qual é sua situação?</h1>
         <p class="text-base md:text-lg text-gray-300">Vamos adaptar a avaliação ao seu caso.</p>
       </div>
@@ -59,11 +61,12 @@ import whatsapp from "../../public/WhatsappLogo.svg"
   }
 </style>
 
-<script is:inline>
+<script is:inline define:vars={{ logoSrc: logo.src }}>
   function showHero(scenario) {
     const contentDiv = document.getElementById('heroContent');
     const choiceDiv = document.getElementById('heroChoice');
     const siteContent = document.getElementById('siteContent');
+    
 
     if (!contentDiv) return;
 
@@ -78,6 +81,7 @@ import whatsapp from "../../public/WhatsappLogo.svg"
     if (scenario === 'pre') {
       contentDiv.innerHTML = `
         <div class="hero-content flex flex-col gap-4 text-center">
+            <img src="${logoSrc}" alt="Logo" class="mx-auto mb-6 w-28 md:w-64" />
           <h2 class="text-2xl md:text-3xl font-bold text-white">
             Você tem aproximadamente 15 dias
           </h2>
@@ -102,6 +106,7 @@ import whatsapp from "../../public/WhatsappLogo.svg"
     } else if (scenario === 'post') {
       contentDiv.innerHTML = `
         <div class="hero-content flex flex-col gap-4 text-center">
+            <img src="${logoSrc}" alt="Logo" class="mx-auto mb-6 w-28 md:w-64" />
           <h2 class="text-2xl md:text-3xl font-bold text-white">
             Ainda há medidas possíveis
           </h2>
