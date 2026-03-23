@@ -162,12 +162,16 @@ import whatsappWhite from "../../public/WhatsappLogoWhite.svg"
 
         <!-- CTA -->
         <div class="flex justify-center">
-            <a class="inline-flex w-full max-w-xs md:w-auto justify-center bg-black text-white px-6 py-3 md:px-8 md:py-3 rounded-sm items-center gap-2 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black font-bold" 
+            <a class="inline-flex w-full max-w-xs md:w-auto justify-center bg-black text-white px-6 py-3 md:px-8 md:py-3 rounded-sm items-center gap-2 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black font-bold whitespace-normal" 
                href="https://wa.me/5592984093014?text=Ol%C3%A1%2C%20preciso%20de%20uma%20avalia%C3%A7%C3%A3o%20URGENTE%20agora." 
                aria-label="Avaliação urgente via WhatsApp">
                 <img src={whatsappWhite.src} alt="WhatsApp" class="w-5 h-5" />
-                <span data-show-pre>Avaliação Urgente em 15 Dias</span>
-                <span data-show-post>Avaliação CRÍTICA em 48-72h</span>
+                <span class="flex flex-col items-center">
+                    <span data-show-pre>Avaliação Urgente</span>
+                    <span data-show-pre class="text-xs">15 Dias</span>
+                    <span data-show-post>Avaliação CRÍTICA</span>
+                    <span data-show-post class="text-xs">48-72h</span>
+                </span>
             </a>
         </div>
     </div>
