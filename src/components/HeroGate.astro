@@ -63,6 +63,11 @@ const logoSrc = logo.src;
 
 <script is:inline define:vars={{ logoSrc: logo.src }}>
   function showHero(scenario) {
+    // Call global scenario setter from DefaultLayout
+    if (typeof window.setScenario === 'function') {
+      window.setScenario(scenario);
+    }
+    
     const contentDiv = document.getElementById('heroContent');
     const choiceDiv = document.getElementById('heroChoice');
     const siteContent = document.getElementById('siteContent');

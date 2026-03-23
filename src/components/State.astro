@@ -10,18 +10,37 @@ import whatsapp from "../../public/WhatsappLogo.svg"
     ul li {
         color: white;
     }
+    
+    /* Hide items based on scenario */
+    [data-scenario="post"] [data-show-pre] {
+        display: none;
+    }
+    [data-scenario="pre"] [data-show-post] {
+        display: none;
+    }
 </style>
 
-<div class="max-w-6xl mx-auto py-24 flex flex-col justify-center px-4">
+<div class="max-w-6xl mx-auto py-24 flex flex-col justify-center px-4" data-scenario-aware>
     <div class="flex flex-col justify-center items-center gap-2.5 text-center">
-    <p class="text-xl md:text-2xl uppercase font-bold">Essa análise é indicada para quem:</p>
+    <p class="text-xl md:text-2xl uppercase font-bold">
+        <span data-show-pre>Essa análise é indicada para quem (em risco):</span>
+        <span data-show-post>Essa análise é indicada para quem (já apreendido):</span>
+    </p>
         <ul>
-            <li>Está com parcelas do financiamento em atraso.</li>
-            <li>Recebeu notificação do banco.</li>
-            <li>Está em risco de busca e apreensão.</li>
-            <li>Possui uma dívida de financiamento aumentando rapidamente.</li>
+            <li data-show-pre>Está com parcelas do financiamento em atraso.</li>
+            <li data-show-pre>Recebeu notificação do banco.</li>
+            <li data-show-pre>Está em risco de busca e apreensão.</li>
+            <li data-show-pre>Possui uma dívida de financiamento aumentando rapidamente.</li>
+            
+            <li data-show-post>Seu veículo foi apreendido pelo banco.</li>
+            <li data-show-post>Quer saber quais medidas ainda são possíveis.</li>
+            <li data-show-post>Precisa de orientação legal para recuperação.</li>
+            <li data-show-post>Quer entender opções de negociação pós-apreensão.</li>
         </ul>
-    <p class="text-lg">Se seu veículo já foi apreendido ou está em risco, é importante avaliar sua situação o quanto antes.</p>
+    <p class="text-lg">
+        <span data-show-pre>Se seu veículo está em risco, o tempo é limitado. Avalie sua situação agora.</span>
+        <span data-show-post>Se seu veículo já foi apreendido, há medidas possíveis. Avalie suas opções urgentemente.</span>
+    </p>
         <div class="mt-6">
             <a
                 class="inline-flex w-full max-w-xs md:w-auto justify-center bg-[#B9B4AB] text-black font-bold px-4 py-3 md:px-3 md:py-2 rounded-sm items-center gap-2 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B9B4AB]"
