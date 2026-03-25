@@ -7,11 +7,11 @@ const logoSrc = logo.src;
 ---
 
 <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={`background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${imgHero.src})`}>
-  <div class="max-w-2xl mx-auto flex flex-col items-center justify-center gap-8 px-4 text-center">
+  <div class="max-w-3xl mx-auto flex flex-col items-center justify-center gap-8 px-4 text-center">
     <div id="heroChoice" class="flex flex-col items-center justify-center gap-8 w-full">
       <div class="flex flex-col gap-4">
         <img src={logo.src} alt="Vandesson Santiago" class="mx-auto mb-8 w-64" />
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Qual é sua situação?</h1>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Seu carro ainda está com você ou o banco já tomou?</h1>
         <p class="text-base md:text-lg text-gray-300">Vamos adaptar a avaliação ao seu caso.</p>
       </div>
 
@@ -19,23 +19,25 @@ const logoSrc = logo.src;
         <button 
           type="button"
           onclick="showHero('pre')"
-          class="flex-1 md:flex-initial px-6 py-3 md:px-6 md:py-3 bg-[#B9B4AB] text-black font-bold text-sm md:text-base rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B9B4AB] flex items-center justify-center gap-2 whitespace-nowrap"
+          class="flex-1 md:flex-initial px-6 py-3 md:px-6 md:py-3 bg-[#B9B4AB] text-black font-bold text-lg rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B9B4AB] flex flex-col items-center justify-center gap-2"
         >
           <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2v2m0-4h-2V7h2v6z" fill="currentColor"/>
           </svg>
-          <span class="leading-tight">Está em risco</span>
+          <span class="leading-tight">Ainda estou com o carro</span>
+          <span class="leading-tight text-base font-light">Quero saber se ainda dá tempo de evitar</span>
         </button>
 
         <button 
           type="button"
           onclick="showHero('post')"
-          class="flex-1 md:flex-initial px-6 py-3 md:px-6 md:py-3 bg-white text-black font-bold text-sm md:text-base rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white flex items-center justify-center gap-2 whitespace-nowrap"
+          class="flex-1 md:flex-initial px-6 py-3 md:px-6 md:py-3 bg-white text-black font-bold text-lg rounded-sm transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white flex flex-col items-center justify-center gap-2"
         >
           <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.41-1.41L7 14h3V5h3v9h3l-3.04-3.71z" fill="currentColor"/>
           </svg>
-          <span class="leading-tight">Já foi apreendido</span>
+          <span class="leading-tight">O banco já levou</span>
+          <span class="leading-tight text-base font-light">Quero entender se ainda posso recuperar</span>
         </button>
       </div>
     </div>
